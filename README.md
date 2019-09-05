@@ -1,6 +1,6 @@
 # Introduction to (NGS) Sequence QC
 
-### Sept 10, 2019
+### Sept 11, 2019
 
 An introduction to NGS sequencing, including an overview of methods, quality
 control checks, preprocessing, and basic manipulation and mapping of the
