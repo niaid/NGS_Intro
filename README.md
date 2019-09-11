@@ -1,12 +1,12 @@
 # Introduction to (NGS) Sequence QC
 
-### Sept 11, 2019
+### March 4, 2019
 
 An introduction to NGS sequencing, including an overview of methods, quality
 control checks, preprocessing, and basic manipulation and mapping of the
 data.
 
-- Location: Building ??? Room A322
+- Bldg 10/11S235 Wolff conference room
 - Instructor: Poorani Subramanian - bioinformatics@niaid.nih.gov
 - [bioinformatics @NIAID](https://bioinformatics.niaid.nih.gov/) - BCBB website has training materials, links to apps that we've written, and the services we provide.
 - Email bioinformatics@niaid.nih.gov if you any questions about your particular sequence data or would like training in a specific topic.  
