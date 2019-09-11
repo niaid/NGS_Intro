@@ -84,7 +84,7 @@ bowtie2-inspect -s cowpox
 
 
 ## map against cowpox
-bowtie2 -t -x cowpox -1 SRR2057563_unmapped.1.fastq -2 SRR2057563_unmapped.2.fastq -S SRR2057563_cowpox.bowtie2.sam --no-unal 2>&1 | tee SRR2057563_cowpox.bowtie2.log
+bowtie2 -p 10 -t -x cowpox -1 SRR2057563_unmapped.1.fastq -2 SRR2057563_unmapped.2.fastq -S SRR2057563_cowpox.bowtie2.sam --no-unal 2>&1 | tee SRR2057563_cowpox.bowtie2.log
 
 ### Unload modules
 module purge
