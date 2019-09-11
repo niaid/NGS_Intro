@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 
 ## Class datasets can be copied to your own directory on Locus:
-cp -r /hpcdata/bcbb/poorani/NGSclass/qc_data .
-cd ./qc_data
+cp ../SRR2057563_1.fastq .
+cp ../SRR2057563_2.fastq .
+
 
 
 
