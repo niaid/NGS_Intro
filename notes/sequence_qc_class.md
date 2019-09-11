@@ -1,11 +1,11 @@
 Introduction to Sequence QC
 ================
 
-Bioinformatics and Computational Biosciences Branch Seminar
+Bioinformatics and Computational Biosciences Branch Seminar at RML
 
 Poorani Subramanian, Computational Biology Specialist
 
-4 March 2019
+11 September 2019
 
 -   [BCBB Science Support](#bcbb-science-support)
 -   [Sequencing intro](#sequencing-intro)
@@ -181,11 +181,11 @@ FASTQ Quality Scores
 
 1.  Phred score *Q*: Given *p*, the probability that the corresponding
     base call is incorrect,  
-    *Q* = -10log<sub>10</sub>*p*.
+    *Q* =  − 10log<sub>10</sub>*p*.
     -   40 is usually highest score – very, very rarely up to 60
 2.  Add constant: *Q* + *C*
-    -   usually, *C* = 33 → Phred+33 format is most common
-        (Illumina &gt; 1.8 \~2011)
+    -   usually, *C* = 33 → Phred+33 format is most common (Illumina \>
+        1.8 \~2011)
 3.  This value, *Q* + *C*, is encoded as an
     [ASCII](https://www.cs.cmu.edu/~pattis/15-1XX/common/handouts/ascii.html)
     character in the FASTQ file.
@@ -289,6 +289,27 @@ Trimming Tools
 
 ------------------------------------------------------------------------
 
+Read Merging
+------------
+
+-   For paired end data where R1 and R2 are expected to overlap
+-   Builds/assembles consensus sequence from each pair of reads. Uses
+    ^^^ information to produce sequence that, in theory, should have
+    fewer errors than each read separately.
+
+### Read Merging Tools
+
+-   **FLASh** - <https://ccb.jhu.edu/software/FLASH/>
+-   PEAR - <https://sco.h-its.org/exelixis/web/software/pear/>
+-   bbmerge -
+    <https://jgi.doe.gov/data-and-tools/bbtools/bb-tools-user-guide/bbmerge-guide/>
+-   Comparison of read mergers - Viana, Samuel, et al. Evaluating
+    Paired-End Read Mergers. doi:
+    [10.6084/m9.figshare.3383185](https://doi.org/10.6084/m9.figshare.3383185).
+    Bioinformatics Open Days, Braga, Portugal.
+
+------------------------------------------------------------------------
+
 MAPPING
 =======
 
@@ -335,7 +356,7 @@ Alignment tools
 -   HiSAT - <http://www.ccb.jhu.edu/software/hisat/manual.shtml>
 -   STAR - <https://github.com/alexdobin/STAR>
 
-**Long Reads**
+**Long Reads (and short reads)**
 
 -   minimap2 - <https://github.com/lh3/minimap2>
 
@@ -433,7 +454,7 @@ Alignment Viewing
 -   picard - <https://broadinstitute.github.io/picard/>
 -   igv - <http://software.broadinstitute.org/software/igv/>
 -   UCSC Genome Browser - <https://genome.ucsc.edu/index.html>
--   Tablet - <https://ics.hutton.ac.uk/tablet/>
+-   **Tablet** - <https://ics.hutton.ac.uk/tablet/>
 -   Geneious
 
 ------------------------------------------------------------------------

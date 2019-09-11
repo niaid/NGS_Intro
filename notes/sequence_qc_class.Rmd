@@ -1,8 +1,8 @@
 ---
 title: 'Introduction to Sequence QC'
-subtitle: 'Bioinformatics and Computational Biosciences Branch Seminar'
+subtitle: 'Bioinformatics and Computational Biosciences Branch Seminar at RML'
 author: Poorani Subramanian, Computational Biology Specialist
-date: "4 March 2019"
+date: "11 September 2019"
 output:
   xaringan::moon_reader:
     css: ["default", "sequence_qc_class_files/remark-css-0.0.1/custom.css"]
@@ -16,7 +16,7 @@ output:
     toc: true
     toc_depth: 1
     pandoc_args: 
-      [ "--template", "/Users/subramanianp4/git/ACE/NGS/notes/sequence_qc_class_files/template.md" ]
+      [ "--template", "/Users/subramanianp4/git/NGS_Intro/notes/sequence_qc_class_files/template.md" ]
 ---
 
 
@@ -28,6 +28,11 @@ outh <- function(moonh) { if (fmt) return(NULL) else return(moonh) }
 ```{r layout, results='asis', include=!fmt, echo=F}
 writeLines(c("", "layout: true", "class: titleandcontent", "", "---"))
 ```
+
+```{r mdsetup, results='asis', include=fmt, echo=F}
+knitr::opts_knit$set(width = 85)
+```
+
 
 ##  BCBB Science Support
 
@@ -308,11 +313,24 @@ Trimming and Filtering
 
 ---
 
+## Read Merging
+
++ For paired end data where R1 and R2 are expected to overlap
++ Builds/assembles consensus sequence from each pair of reads.  Uses ^^^ information to produce sequence that, in theory, should have fewer errors than each read separately.
+
+### Read Merging Tools
+
++ **FLASh** - https://ccb.jhu.edu/software/FLASH/
++ PEAR - https://sco.h-its.org/exelixis/web/software/pear/
++ bbmerge - https://jgi.doe.gov/data-and-tools/bbtools/bb-tools-user-guide/bbmerge-guide/
++ Comparison of read mergers - Viana, Samuel, et al. Evaluating Paired-End Read Mergers. doi: [10.6084/m9.figshare.3383185](https://doi.org/10.6084/m9.figshare.3383185). Bioinformatics Open Days, Braga, Portugal.
+
+---
+
 
 ```{r layout5, results='asis', include=!fmt, echo=F}
 writeLines(c("class: title-slide center middle section-header"))
 ```
-
 
 
 #  MAPPING 
@@ -360,7 +378,7 @@ writeLines(c("class: title-slide center middle section-header"))
 + HiSAT - http://www.ccb.jhu.edu/software/hisat/manual.shtml
 + STAR - https://github.com/alexdobin/STAR
 
-**Long Reads**
+**Long Reads (and short reads)**
 
 + minimap2 - https://github.com/lh3/minimap2
 
@@ -423,7 +441,7 @@ X |	Read Mismatch; the nucleotide is present in the reference
 + picard - https://broadinstitute.github.io/picard/
 + igv - http://software.broadinstitute.org/software/igv/
 + UCSC Genome Browser - https://genome.ucsc.edu/index.html
-+ Tablet - https://ics.hutton.ac.uk/tablet/
++ **Tablet** - https://ics.hutton.ac.uk/tablet/
 + Geneious
 
 

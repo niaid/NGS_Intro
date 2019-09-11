@@ -7,8 +7,8 @@ cd ./qc_data
 
 
 #### QC #####
-module load fastqc/0.11.5-Java-1.8.0_45
-module load multiqc/1.5-Python-3.6.0
+module load fastqc
+module load multiqc
 
 #### FastQC
 mkdir fastqc_output
@@ -26,11 +26,10 @@ cd ./fastqc_output
 multiqc .
 
 
-
 #### Trimming
-module load bbmap/38.41
+module load bbmap
 
-## Move back up to the qc_data directory
+## Move back up a directory
 cd ..
 
 ## BBDuk help https://jgi.doe.gov/data-and-tools/bbtools/bb-tools-user-guide/bbduk-guide/
@@ -40,13 +39,20 @@ bbduk.sh -h
 bbduk.sh in=poor_16S_S1_R1_001.fastq in2=poor_16S_S1_R2_001.fastq out=poor_16S_S1_R1_trimmed.fastq out2=poor_16S_S1_R2_trimmed.fastq ktrim=l k=18 mink=4 ref=./primers.fa copyundefined=t overwrite=t threads=10 tbo
 
 
-## adapter trimming on the right 
-bbduk.sh in=SRR2057563_1.fastq in2=SRR2057563_2.fastq out=SRR2057563_trimmed.1.fastq out2=SRR2057563_trimmed.2.fastq ktrim=r k=27 mink=4 hdist=1 ref=../bbmap/resources/adapters.fa minlen=10 overwrite=t threads=10
+## adapter trimming on the right
+bbduk.sh in=SRR2057563_1.fastq in2=SRR2057563_2.fastq out=SRR2057563_trimmed.1.fastq out2=SRR2057563_trimmed.2.fastq ktrim=r k=27 mink=4 hdist=1 ref=$EBROOTBBMAP/resources/adapters.fa minlen=10 overwrite=t threads=10
 
 
 ## quality - can do at the same time as adapter, just did this separately for clarity
 bbduk.sh in=SRR2057563_trimmed.1.fastq in2=SRR2057563_trimmed.2.fastq out=SRR2057563_trimmed.quality.1.fastq out2=SRR2057563_trimmed.quality.2.fastq qtrim=rl trimq=15 maq=2 minlen=60 overwrite=t threads=10
 
+## merge reads with flash https://ccb.jhu.edu/software/FLASH/
+module load flash
+flash --help
+
+## Merge trimmed reads
+# flash -m min_overlap --max-overlap max_overlap -t numberofthreads --max-mismatch-density max_mismatch_density -o SampleID_merged -d ./outputs/merged R1.fastq R2.fastq
+flash -m 10 --max-overlap 300 -t 10 --max-mismatch-density 0.25 -o SRR2057563_merged -d . SRR2057563_trimmed.quality.1.fastq SRR2057563_trimmed.quality.2.fastq
 
 
 ## SRA data is from from https://www.ebi.ac.uk/ena/data/view/SRR2057563
@@ -54,7 +60,7 @@ bbduk.sh in=SRR2057563_trimmed.1.fastq in2=SRR2057563_trimmed.2.fastq out=SRR205
 
 
 #### Mapping ######
-module load bowtie2/2.3.4.1
+module load bowtie2
 
 ## See the bowtie2 help http://bowtie-bio.sourceforge.net/bowtie2/manual.shtml
 bowtie2 --help
@@ -80,9 +86,12 @@ bowtie2-inspect -s cowpox
 ## map against cowpox
 bowtie2 -t -x cowpox -1 SRR2057563_unmapped.1.fastq -2 SRR2057563_unmapped.2.fastq -S SRR2057563_cowpox.bowtie2.sam --no-unal 2>&1 | tee SRR2057563_cowpox.bowtie2.log
 
+### Unload modules
+module purge
+module load uge
 
 #### Samtools
-module load samtools/1.9-goolf-1.7.20
+module load samtools
 
 ## samtools sort
 samtools sort SRR2057563_cowpox.bowtie2.sam -o SRR2057563_cowpox.bowtie2.sorted.sam

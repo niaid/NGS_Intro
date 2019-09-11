@@ -13,12 +13,11 @@ data.
 
 #### Resources
 - [Lecture Notes](notes/sequence_qc_class.md) 
-- [Locus info](notes/locus.md) - account, how to login and start interactive session, how to transfer data, etc.
-- [Geneious notes](notes/geneious.md)
+- [Locus info](notes/locus.md) - account, how to login and start interactive session, how to submit a job; how to transfer data, etc.
 - [qc.sh](qc.sh) - script used in class; modified to add info for how to run the commands using your own Locus acct
-- [Ebola strains exercise](notes/ebov.md) - extra exercise to try on your own
 
 #### Tools
+
 - [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
 - [MultiQC](https://multiqc.info/)
 - [bowtie2](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml)
@@ -27,5 +26,6 @@ data.
 - [samtools](http://www.htslib.org/doc/samtools.html)
 - [Nephele](https://nephele.niaid.nih.gov/) - easy web based interface to run FastQC, trim adapter/primer/quality, and merge paired-end reads. [QC Pipeline](https://nephele.niaid.nih.gov/user_guide_pipes/#qc_pipes) will work with general datasets (even non-microbiome).  [Very detailed info](https://nephele.niaid.nih.gov/details_qc/).
 
-  
+### Past Classes
+- March 4, 2019 BCBB training - [4Mar2019 branch](https://github.com/niaid/NGS_Intro/tree/4Mar2019)
 

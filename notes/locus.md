@@ -28,7 +28,33 @@ qrsh -l h_vmem=32G
 ![](assets/img/cyberduck.png)
 
 
-## Basic unix commands
+
+## Batch Job
+
+- [Locus documentation](https://locus.niaid.nih.gov/userportal/documentation.php#Getting-Started/Submitting-your-First-Job)
+- [job_submit.sh](../job_submit.sh)
+- Submit job
+
+```bash
+qsub job_submit.sh
+```
+
+- Check on job while running
+
+```bash
+qstat -u username
+qstat -j jobid
+```
+
+- Get info about job after it's done running
+
+```
+qacct -j jobid
+```
+
+
+
+## Basic unix commands for Locus
 
 ```bash
 ## list files in directory
@@ -52,6 +78,8 @@ less filename
 
 ## unload all modules (in case you get an error when you load one)
 module purge
+# default module to load - allows qsub and qrsh to run
+module load uge 
 
 ## list all loaded modules
 module list
