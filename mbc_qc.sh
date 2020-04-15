@@ -67,7 +67,7 @@ bowtie2-inspect -s phiX
 ## map against phiX
 ## we use --very-fast in class, but probably better to omit this parameter or use --very-sensitive
 ## there is trade-off between speed and sensitivity
-bowtie2 -k 1 -p 10 --very-fast -t -x /hpcdata/bcbb/poorani/NGSclass/bowtie2/bostaurus -1 Undetermined_S0_L001_R1_001.fastq.gz -2 Undetermined_S0_L001_R2_001.fastq.gz -S Undetermined_phiX.bowtie2.sam --no-unal --un-conc Undetermined_unmapped.fastq 2>&1 | tee Undetermined_phiX.bowtie2.log
+bowtie2 -k 1 -p 10 --very-fast -t -x phiX -1 Undetermined_S0_L001_R1_001.fastq.gz -2 Undetermined_S0_L001_R2_001.fastq.gz -S Undetermined_phiX.bowtie2.sam --no-unal --un-conc Undetermined_unmapped.fastq 2>&1 | tee Undetermined_phiX.bowtie2.log
 
 
 
