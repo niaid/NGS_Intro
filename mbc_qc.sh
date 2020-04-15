@@ -79,4 +79,4 @@ module load uge
 module load samtools
 
 ## samtools sort
-samtools sort Undetermined_phiX.bowtie2.sam -o Undetermined_phiX.bowtie2.sam
+samtools sort Undetermined_phiX.bowtie2.sam -o Undetermined_phiX.bowtie2.sorted.sam
