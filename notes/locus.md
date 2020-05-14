@@ -9,7 +9,6 @@
 
 ![](assets/img/locus_cluster_fixed.svg)
 
-
 ## Login via ssh
 
 ```bash
@@ -29,8 +28,8 @@ qrsh -l h_vmem=16G
 
 ### Mount folders to laptop
 
-- **Mac**: smb://locusfileserver.niaid.nih.gov/username$
-- **Windows**: \\locusfileserver.niaid.nih.gov\username
+- **Mac**: smb://locusfileserver.niaid.nih.gov/username
+- **Windows**: \\\locusfileserver.niaid.nih.gov\username
 
 ### Access folders via sftp
 
@@ -74,6 +73,8 @@ module load uge
 
 ## list all loaded modules
 module list
+## search for module versions - replace fastqc with whatever program you are using
+module avail fastqc
 
 ## close your interactive session or log out of locus
 exit
