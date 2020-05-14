@@ -8,7 +8,8 @@ An introduction to using Locus while running some basic QC.
 - [Locus info](notes/locus.md) - account, how to login and start interactive session, how to submit a job; how to transfer data, etc.
 
 - [Lecture Notes](notes/sequence_qc_class.md) 
-- [qc.sh](qc.sh) - script used in class; modified to add info for how to run the commands using your own Locus acct
+- [qc.sh](qc.sh) - script used in class with some extra commands
+- [sequence data](ftp://helix.nih.gov/pub/poorani/lpd_data.zip)
 
 #### Tools
 
