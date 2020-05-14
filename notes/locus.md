@@ -7,7 +7,7 @@
 - [Batch job](#batch-job)
 - [More information for the curious](#more-information-for-the-curious)
 
-<img src="assets/img/locus_cluster_fixed.svg" width="75%">
+<img src="assets/img/locus_cluster_fixed.svg" width="65%">
 
 ## Login via ssh
 
