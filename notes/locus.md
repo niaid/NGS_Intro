@@ -28,10 +28,12 @@ qrsh -l h_vmem=16G
 
 ### Mount folders to laptop
 
-- **Mac**: smb://locusfileserver.niaid.nih.gov/username
+- **Mac**: in Finder, Cmd+K smb://locusfileserver.niaid.nih.gov/username
 - **Windows**: \\\locusfileserver.niaid.nih.gov\username
 
 ### Access folders via sftp
+
+- alternate way to access folders if mounting doesn't work
 
 - [Cyberduck](https://cyberduck.io/) -> Open Connection (icon top left of the window) 
 ![](assets/img/cyberduck.png)
@@ -39,7 +41,7 @@ qrsh -l h_vmem=16G
 
 ## Basic unix commands
 
-- [Cheat sheet](https://web.stanford.edu/class/physics91SI/handouts/04_UNIX_Commands.pdf)
+- [Cheat sheet](https://web.stanford.edu/class/physics91SI/handouts/04_UNIX_Commands.pdf); [Longer cheat sheet](http://www.mathcs.emory.edu/~valerie/courses/fall10/155/resources/unix_cheatsheet.html)
 
 ```bash
 ## list files in directory
@@ -62,10 +64,31 @@ cp file path/to/new/location
 # copy a directory
 cp -r directory newdirectory
 
+## move a file
+mv file path/to/new/location
+
 ## look at a file (replace filename)
 less filename
 ## to quit less - type `q`
 
+## get help - replace command with the command/program you need help with
+man commandforhelp
+command -h | less
+
+## delete files - CAUTION!  There is no recycling bin.  Files removed are gone forever. (well, technically, Locus makes backups, but only once a day)
+rm file
+rm -r directory
+```
+
+### Locus-specific commands
+
+- also see batch job section below
+
+```bash
+## load module - replace modulename with the program (e.g. fastqc)
+module load modulename
+## unload one module
+module unload modulename
 ## unload all modules (in case you get an error when you load one)
 module purge
 # default module to load - allows qsub and qrsh to run
@@ -73,8 +96,10 @@ module load uge
 
 ## list all loaded modules
 module list
-## search for module versions - replace fastqc with whatever program you are using
-module avail fastqc
+## search for module versions
+module avail modulename
+## get info on module
+module info modulename
 
 ## close your interactive session or log out of locus
 exit
