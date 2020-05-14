@@ -27,5 +27,6 @@ data.
 - [Nephele](https://nephele.niaid.nih.gov/) - easy web based interface to run FastQC, trim adapter/primer/quality, and merge paired-end reads. [QC Pipeline](https://nephele.niaid.nih.gov/user_guide_pipes/#qc_pipes) will work with general datasets (even non-microbiome).  [Very detailed info](https://nephele.niaid.nih.gov/details_qc/).
 
 ### Past Classes
+- Sept 11, 2019 RML training - [RML-2019](https://github.com/niaid/NGS_Intro/tree/RML-2019)
 - March 4, 2019 BCBB training - [4Mar2019 branch](https://github.com/niaid/NGS_Intro/tree/4Mar2019)
 
