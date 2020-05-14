@@ -9,7 +9,7 @@ An introduction to using Locus while running some basic QC.
 
 - [Lecture Notes](notes/sequence_qc_class.md) 
 - [qc.sh](qc.sh) - script used in class with some extra commands
-- [sequence data](ftp://helix.nih.gov/pub/poorani/lpd_data.zip)
+- [sequence data](https://proj-bip-prod-publicread.s3.amazonaws.com/training/NGS_Intro/lpd_data.zip)
 
 #### Tools
 
