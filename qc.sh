@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 ## Class datasets can be copied to your own directory on Locus:
-cp -r /hpcdata/scratch/lpd_data
+cp -r /hpcdata/scratch/lpd_data .
 
 
 #### QC #####
