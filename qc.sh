@@ -1,8 +1,34 @@
 #!/usr/bin/env bash
 
+## once you are logged into Locus ai-submit node, open interacctive session
+qrsh -l h_vmem=16G
+
+## print your working directory
+pwd
+
 ## Class datasets can be copied to your own directory on Locus:
 cp -r /hpcdata/scratch/lpd_data .
 
+## list files in directory
+ls
+## long format
+ls -l
+## help
+man ls
+
+## change to lpd_data directory
+cd lpd_data
+
+## make a directory for fastq files
+mkdir fastq
+
+## move fastq file into fastq directory
+mv 2cells_1.fastq fastq
+# move all files ending in ".fastq"
+mv *.fastq fastq
+
+## change to fastq directory
+cd fastq
 
 #### QC #####
 module load fastqc
@@ -11,18 +37,27 @@ module load multiqc
 #### FastQC
 mkdir fastqc_output
 
-## fastqc help
+## fastqc help (in less 'q' for quit)
 fastqc -h
+fastqc -h | less
 
 ## run fastqc
 fastqc *.fastq -o ./fastqc_output
 cd ./fastqc_output
 
 ## run multiqc to generate summary report
+multiqc .
 ## useful parameter to add is --cl-config "read_count_multiplier: 1"
 ## this will give the total number of reads in each file instead of giving the count in millions
-multiqc .
+multiqc --cl-config "read_count_multiplier: 1" .
 
+
+
+#### additional QC steps you can try on your own #####
+
+### Unload modules
+module purge
+module load uge
 
 #### Trimming
 module load bbmap
@@ -69,7 +104,9 @@ bowtie2 --help
 ## there is trade-off between speed and sensitivity
 bowtie2 -k 1 -p 10 --very-fast -t -x /hpcdata/bcbb/poorani/NGSclass/bowtie2/bostaurus -1 SRR2057563_trimmed.quality.1.fastq -2 SRR2057563_trimmed.quality.2.fastq -S SRR2057563_bostaurus.bowtie2.sam --no-unal --un-conc SRR2057563_unmapped.fastq
 
-## bos taurus index was built from GCF_002263795.1_ARS-UCD1.2_genomic.fna
+## Extra credit
+## bos taurus index was built from GCF_002263795.1_ARS-UCD1.2_genomic.fna which you can download from NCBI
+## by searching for GCF_002263795
 ## can use my index (in command above)
 ## OR can build your own index; this make take some time
 ## To build your own, modify the cowpox index command below to instead build from the Bos taurus genome
