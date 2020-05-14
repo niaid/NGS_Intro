@@ -24,5 +24,5 @@ An introduction to using Locus while running some basic QC.
 ### Past Classes
 - Sept 11, 2019 RML training - [RML-2019](https://github.com/niaid/NGS_Intro/tree/RML-2019)
 - March 4, 2019 BCBB training - [4Mar2019 branch](https://github.com/niaid/NGS_Intro/tree/4Mar2019)
-- Aug 29, 2018 ACE Uganda training [uganda-2018](https://github.com/niaid/NGS_Intro/tree/uganda-2018)
+- Aug 29, 2018 ACE Uganda training - [uganda-2018](https://github.com/niaid/NGS_Intro/tree/uganda-2018)
 
