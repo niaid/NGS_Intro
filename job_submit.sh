@@ -20,6 +20,8 @@
 
 # Tell the job your memory requirements
 #$ -l h_vmem=16G
+# If your job is "quick", i.e. will take less than 24h.  If you are not sure, then delete this line:
+#$ -l quick
 
 
 # script commands go below
