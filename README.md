@@ -1,19 +1,13 @@
 # Introduction to (NGS) Sequence QC
 
-### Sept 11, 2019
+### May 14, 2020
 
-An introduction to NGS sequencing, including an overview of methods, quality
-control checks, preprocessing, and basic manipulation and mapping of the
-data.
+An introduction to using Locus while running some basic QC.
 
-- Location: Building ??? Room A322
 - Instructor: Poorani Subramanian - bioinformatics@niaid.nih.gov
-- [bioinformatics @NIAID](https://bioinformatics.niaid.nih.gov/) - BCBB website has training materials, links to apps that we've written, and the services we provide.
-- Email bioinformatics@niaid.nih.gov if you any questions about your particular sequence data or would like training in a specific topic.  
-
-#### Resources
-- [Lecture Notes](notes/sequence_qc_class.md) 
 - [Locus info](notes/locus.md) - account, how to login and start interactive session, how to submit a job; how to transfer data, etc.
+
+- [Lecture Notes](notes/sequence_qc_class.md) 
 - [qc.sh](qc.sh) - script used in class; modified to add info for how to run the commands using your own Locus acct
 
 #### Tools

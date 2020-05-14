@@ -1,10 +1,7 @@
 #!/usr/bin/env bash
 
 ## Class datasets can be copied to your own directory on Locus:
-cp ../SRR2057563_1.fastq .
-cp ../SRR2057563_2.fastq .
-
-
+cp -r /hpcdata/scratch/lpd_data
 
 
 #### QC #####
@@ -37,11 +34,11 @@ cd ..
 bbduk.sh -h
 
 ## primer trimming on the left
-bbduk.sh in=poor_16S_S1_R1_001.fastq in2=poor_16S_S1_R2_001.fastq out=poor_16S_S1_R1_trimmed.fastq out2=poor_16S_S1_R2_trimmed.fastq ktrim=l k=18 mink=4 ref=./primers.fa copyundefined=t overwrite=t threads=10 tbo
+bbduk.sh in=poor_16S_S1_R1_001.fastq in2=poor_16S_S1_R2_001.fastq out=poor_16S_S1_R1_trimmed.fastq out2=poor_16S_S1_R2_trimmed.fastq ktrim=l k=18 mink=4 ref=./primers.fa copyundefined=t overwrite=t threads=10
 
 
 ## adapter trimming on the right
-bbduk.sh in=SRR2057563_1.fastq in2=SRR2057563_2.fastq out=SRR2057563_trimmed.1.fastq out2=SRR2057563_trimmed.2.fastq ktrim=r k=27 mink=4 hdist=1 ref=$EBROOTBBMAP/resources/adapters.fa minlen=10 overwrite=t threads=10
+bbduk.sh in=SRR2057563_subsample_1.fastq in2=SRR2057563_subsample_2.fastq out=SRR2057563_trimmed.1.fastq out2=SRR2057563_trimmed.2.fastq ktrim=r k=27 mink=4 hdist=1 ref=$EBROOTBBMAP/resources/adapters.fa minlen=10 overwrite=t threads=10
 
 
 ## quality - can do at the same time as adapter, just did this separately for clarity
