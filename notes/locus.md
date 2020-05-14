@@ -4,10 +4,10 @@
 - [Interactive session](#interactive-session)
 - [Access folders](#access-folders)
 - [Basic unix commands](#basic-unix-commands)
+- [Batch job](#batch-job)
 - [More information for the curious](#more-information-for-the-curious)
 
-
-![](assets/img/locus_cluster_fixed.svg)
+<img src="assets/img/locus_cluster_fixed.svg" width="75%">
 
 ## Login via ssh
 
@@ -36,7 +36,7 @@ qrsh -l h_vmem=16G
 - alternate way to access folders if mounting doesn't work
 
 - [Cyberduck](https://cyberduck.io/) -> Open Connection (icon top left of the window) 
-![](assets/img/cyberduck.png)
+<img src="assets/img/cyberduck.png" width="75%">
 
 
 ## Basic unix commands
@@ -72,7 +72,7 @@ less filename
 ## to quit less - type `q`
 
 ## get help - replace command with the command/program you need help with
-man commandforhelp
+man command
 command -h | less
 
 ## delete files - CAUTION!  There is no recycling bin.  Files removed are gone forever. (well, technically, Locus makes backups, but only once a day)
