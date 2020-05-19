@@ -161,14 +161,14 @@ exit
 qsub job_submit.sh
 ```
 
-- a few useful options for qsub
+- A few useful options for qsub
 
-## Find relative directory from the current directory
+- Find relative directory from the current directory
 
 ```bash
 -cwd
 ```
-## Send standard output (error) stream to a different file
+- Send standard output (error) stream to a different file
 
 ```bash
 -o path/filename
