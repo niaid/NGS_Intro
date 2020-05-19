@@ -256,7 +256,7 @@ install.packages("package_name")
 BiocManagers::install("package_name")
 ```
 
-## limitations and restrictions
+## Limitations and restrictions
 
 No job running on the login node. 
 
