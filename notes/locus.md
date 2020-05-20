@@ -1,4 +1,4 @@
-## why do you need HPC
+## When should you use a High Performance Cluster
 
 - You need resources not available on your local laptop
 
@@ -8,7 +8,7 @@ very long time
 - You need to run a job that can make use of parallel
 computing
 
-# Locus
+# NIAID Locus
 
 Operating system is RedHatEnterpriseServer
 
@@ -23,7 +23,7 @@ For job scheduling system, the NIAID specific HPC- Locus uses Sun Grid Engine (S
 
 <img src="assets/img/locus_cluster_fixed.svg" width="65%">
 
-## to access
+## How to request access to LOCUS
 
 to have an account on LOCUS, email your request to NIAIDHPCSUPPORT@niaid.nih.gov
 
