@@ -1,18 +1,4 @@
-## When should you use a High Performance Cluster
-
-- You need resources not available on your local laptop
-
-- You need to run a program (job) that will run for a
-very long time
-
-- You need to run a job that can make use of parallel
-computing
-
-# NIAID Locus
-
-Operating system is RedHatEnterpriseServer
-
-For job scheduling system, the NIAID specific HPC- Locus uses Sun Grid Engine (SGE), which is different from the Slurm on Biowulf. Therefore many of the commands are not the same. 
+# Locus
 
 - [Login via ssh](#login-via-ssh)
 - [Interactive session](#interactive-session)
@@ -22,24 +8,6 @@ For job scheduling system, the NIAID specific HPC- Locus uses Sun Grid Engine (S
 - [More information for the curious](#more-information-for-the-curious)
 
 <img src="assets/img/locus_cluster_fixed.svg" width="65%">
-
-## How to request access to LOCUS
-
-to have an account on LOCUS, email your request to NIAIDHPCSUPPORT@niaid.nih.gov
-
-For Mac users, you can use ssh from Terminal Window.
-Also need Xquartz for X Window (graphic) applications: https://www.xquartz.org/
-
-For PC users, you need to install and ssh client – such as
-MobaXterm or Cygwin, Putty and Winscp :
-
-http://mobaxterm.mobatek.net/
-
-http://www.cygwin.com
-
-http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
-
-http://winscp.net
 
 ## Login via ssh
 
@@ -110,20 +78,7 @@ command -h | less
 ## delete files - CAUTION!  There is no recycling bin.  Files removed are gone forever. (well, technically, Locus makes backups, but only once a day)
 rm file
 rm -r directory
-
-## print the content of a file to the screen
-cat file
-
-## make a new directory
-mkdir newdirectory
-
-## establish a new text file
-nano file
-
-## find the file/folder sizes in the current working directory
-du -sh *
 ```
-
 
 ### Locus-specific commands
 
@@ -161,20 +116,6 @@ exit
 qsub job_submit.sh
 ```
 
-- A few useful options for qsub
-
-- Find relative directory from the current directory
-
-```bash
--cwd
-```
-- Send standard output (error) stream to a different file
-
-```bash
--o path/filename
--e path/filename
-```
-
 - Check on job while running
 
 ```bash
@@ -186,23 +127,6 @@ qstat -j jobid
 
 ```
 qacct -j jobid
-```
-
-- Get info about job while running
-
-```bash
-qstat -j jobid | grep usage 
-```
-
-- Check the running processes on the current node
-```
-htop
-```
-
-- Delete a runing job that you don't need it anymore
-
-```
-qdel jobid
 ```
 
 ## More information for the curious
@@ -224,45 +148,4 @@ scp -r username@ai-submit2.niaid.nih.gov:/classhome/username ~/Desktop
  ## general command
  scp -r username@servername:serverfolderpath laptopfolderpath
 ```
-
-You could also use rSyn
-rSyn -r username@ai-submit2.niaid.nih.gov:/classhome/username ~/Desktop/myfolder
-
-### the Jupyter hub hosted by Locus
-
-https://ai-submit2.niaid.nih.gov:10101/
-
-To install packages to the python kernel, you need to login Locus and arsh to a node.
-
-```bash
-module load Anaconda3/5.3.0
-
-source activate /sysapps/cluster/software/Anaconda3/5.3.0/envs/jupyterenv
-
-pip install --user myPackage
-```
-Then the package will be available to your jupyterhub. 
-
-
-To install packages to the R kernel (3.6.1) on Jupyter Hub, however, you have to call for the module-Anaconda2/5.3.0
-
-```bash
-module load Anaconda2/5.3.0
-
-install.packages("package_name")
-
-## or
-
-BiocManagers::install("package_name")
-```
-
-## Current limitations and restrictions
-
-- No compute jobs should be running on the login node. 
-
-- If you want to run RStudio on LOCUS, the best way to do it is using the NoMachine Virtue Machine, to do that you need to get an LDAP account and set up a connection following instruction here. https://locus.niaid.nih.gov/userportal/documentation.php#FAQ/the-nomachine-terminal-server
-
-- At the moment, Interactive 3D ploting using the "rgl" package is not possible because there is no OpenGLlibrary available on Locus.  
-
-
 
