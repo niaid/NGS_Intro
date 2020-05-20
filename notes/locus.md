@@ -256,7 +256,7 @@ install.packages("package_name")
 BiocManagers::install("package_name")
 ```
 
-## Current Limitations and Restrictions
+## Current limitations and restrictions
 
 - No compute jobs should be running on the login node. 
 
