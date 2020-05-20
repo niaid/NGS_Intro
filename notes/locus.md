@@ -133,7 +133,7 @@ qacct -j jobid
 
 [Locus website](https://locus.niaid.nih.gov) - if you don't have a Locus server account, the first time you log into the website (using your regular NIH creds), you will get an email telling you how to request an account.
 
-[BCBB unix class materials](https://github.com/niaid/ACE/tree/master/unix) - look at pptx slides for info about the commands in the scripts
+[BCBB unix class materials](https://github.com/niaid/unix ) 
 
 ### Copy folders from Locus to Laptop via command line
 
