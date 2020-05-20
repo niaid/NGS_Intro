@@ -256,15 +256,15 @@ install.packages("package_name")
 BiocManagers::install("package_name")
 ```
 
-## Limitations and restrictions
+## Current Limitations and Restrictions
 
-No job running on the login node. 
+- No compute jobs should be running on the login node. 
 
-If you want to run Rstudio on Locus, the best way is to use the NoMachine Virtue Machine, to do that you need to get a LDAP account and set up a connection following instruction here.  
+- If you want to run RStudio on LOCUS, the best way to do it is using the NoMachine Virtue Machine, to do that you need to get an LDAP account and set up a connection following instruction here.  
 
 https://locus.niaid.nih.gov/userportal/documentation.php#FAQ/the-nomachine-terminal-server
 
-Interactive 3D ploting using the "rgl" package is not possible because a OpenGL library is lacking on Locus.  
+- Interactive 3D ploting using the "rgl" package is not possible because a OpenGL library is lacking on Locus.  
 
 
 
