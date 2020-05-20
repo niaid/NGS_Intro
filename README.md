@@ -22,7 +22,7 @@ An introduction to using Locus while running some basic QC.
 - [Nephele](https://nephele.niaid.nih.gov/) - easy web based interface to run FastQC, trim adapter/primer/quality, and merge paired-end reads. [QC Pipeline](https://nephele.niaid.nih.gov/user_guide_pipes/#qc_pipes) will work with general datasets (even non-microbiome).  [Very detailed info](https://nephele.niaid.nih.gov/details_qc/).
 
 ### Past Classes
-- May 14, 2019 LPD MIS training - [LPD-2020](https://github.com/niaid/NGS_Intro/tree/LPD-2020)
+- May 14, 2020 LPD MIS training - [LPD-2020](https://github.com/niaid/NGS_Intro/tree/LPD-2020)
 - Sept 11, 2019 RML training - [RML-2019](https://github.com/niaid/NGS_Intro/tree/RML-2019)
 - March 4, 2019 BCBB training - [4Mar2019 branch](https://github.com/niaid/NGS_Intro/tree/4Mar2019)
 - Aug 29, 2018 ACE Uganda training - [uganda-2018](https://github.com/niaid/NGS_Intro/tree/uganda-2018)
